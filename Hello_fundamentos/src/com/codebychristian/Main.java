@@ -13,7 +13,7 @@ public class Main {
 		System.out.println("Olá! Qual seu nome? ");
 		String nome = saida.nextLine(); 
 		
-		System.out.println("Digite sua idade! Por favor");
+		System.out.println("Digite sua idade! Favor");
 		String idade = saida1.nextLine();
 		
 		System.out.println("Olá, " + nome);
