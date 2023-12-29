@@ -16,6 +16,8 @@ public class Principal {
 		idade = teclado.nextInt();
 		peso = teclado.nextDouble();
 		nome = teclado.next();
+		teclado.close();
+		
 		
 		System.out.println();
 		
