@@ -3,6 +3,7 @@ package com.codeBychristian;
 import java.util.Scanner;
 
 public class Calcular {
+	
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -49,16 +50,29 @@ public class Calcular {
 		
 		int finalValor = 0;
 		  
-		if( operacao == '+') {
+		/*  Ulizando if e else if:
+		 * if( operacao == '+') { finalValor = numero1 + numero2; } else if(operacao ==
+		 * '-') { finalValor = numero1 - numero2; } else if(operacao == '*') {
+		 * finalValor = numero1 * numero2; } else if(operacao == '/') { finalValor =
+		 * numero1 / numero2; } else { System.out.println("Erro...Tente Novamente:"); }
+		 */
+		
+// SWITCH, é recomendado para esse caso: situações que não usamos AND, OR e NOT
+		switch(operacao) {
+		case '+':
 			finalValor = numero1 + numero2;
-		} else if(operacao == '-') {
-			finalValor = numero1 - numero2;
-		} else if(operacao == '*') {
+			break;
+		case '*':
 			finalValor = numero1 * numero2;
-		} else if(operacao == '/') {
+			break;
+		case '-': 
+			finalValor = numero1 - numero2;
+			break;
+		case '/': 
 			finalValor = numero1 / numero2;
-		} else {
-			System.out.println("Erro...Tente Novamente:");
+			break;
+		default:
+			System.out.println("Ocorreu um erro... Tente novamente:");
 		}
 		
 		System.out.println(String.format("%d %c %d = %d", numero1, operacao, numero2, finalValor));
