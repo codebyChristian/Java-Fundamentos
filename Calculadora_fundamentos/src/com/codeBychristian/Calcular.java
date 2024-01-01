@@ -26,6 +26,8 @@ public class Calcular {
 
 		//int numero2 = Integer.parseInt(number2.nextLine());
 		
+		//System.out.println("A soma de " + numero1 + "" + operacao + numero2 + " = " + soma);	
+		
 		System.out.println("Soma de números");
 		
 		System.out.println("Digite o primeiro número: ");
@@ -45,11 +47,21 @@ public class Calcular {
 		// Interpolação
 		System.out.println(String.format("Você quer fazer a operação %d %c %d", numero1, operacao, numero2));
 		
-		//int numero2 = number2.nextInt();
-		
-		//int soma = numero1 + numero2;
+		int finalValor = 0;
 		  
-		//System.out.println("A soma de " + numero1 + "" + operacao + numero2 + " = " + soma);	 
+		if( operacao == '+') {
+			finalValor = numero1 + numero2;
+		} else if(operacao == '-') {
+			finalValor = numero1 - numero2;
+		} else if(operacao == '*') {
+			finalValor = numero1 * numero2;
+		} else if(operacao == '/') {
+			finalValor = numero1 / numero2;
+		} else {
+			System.out.println("Erro...Tente Novamente:");
+		}
+		
+		System.out.println(String.format("%d %c %d = %d", numero1, operacao, numero2, finalValor));
 		
 		number1.close();
 		
