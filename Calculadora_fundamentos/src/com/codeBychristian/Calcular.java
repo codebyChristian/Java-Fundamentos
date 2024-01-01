@@ -1,5 +1,6 @@
 package com.codeBychristian;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Calcular {
@@ -74,8 +75,11 @@ public class Calcular {
 		default:
 			System.out.println("Ocorreu um erro... Tente novamente:");
 		}
+		ArrayList<String> todasOperacoes = new ArrayList<String>();
+		String receberOperacoes = String.format("%d %c %d = %d", numero1, operacao, numero2, finalValor);
 		
-		System.out.println(String.format("%d %c %d = %d", numero1, operacao, numero2, finalValor));
+		todasOperacoes.add(receberOperacoes);	
+		System.out.println(receberOperacoes);
 		
 		number1.close();
 		
