@@ -27,16 +27,17 @@ public class Calcular {
 		// soma);
 
 		// 1 = operação; 2 = historico; 3 = sair
+		Scanner number1 = new Scanner(System.in);
 		int menu = 1;
 		ArrayList<String> todasOperacoes = new ArrayList<String>();
-		while (menu > 0) {
+		while (menu < 3) {
 			if (menu == 1) {
 
 				System.out.println("======= MINI CALCULADORA =======");
 
 				System.out.println("Digite o primeiro número: ");
 
-				Scanner number1 = new Scanner(System.in);
+				
 
 				int numero1 = number1.nextInt();
 
@@ -84,12 +85,24 @@ public class Calcular {
 				todasOperacoes.add(receberOperacoes);
 				System.out.println(receberOperacoes);
 
-				number1.close();
+				
 			} else if(menu == 2) {
 				System.out.println("==HISTÓRICO DE USO:");
 				System.out.println(String.format("Esse é o total de operações %d ", todasOperacoes.size()));
+// Apresentar todas as operções, usando for:				
+				for (int i = 0; i < todasOperacoes.size(); i++ ) {
+					System.out.println(todasOperacoes.get(i));
+				}
+				
 			}
+			System.out.println("***Escolha uma opção:***");
+			System.out.println("1. Fazer uma operação simples");
+			System.out.println("2. Histórico de operações");
+			System.out.println("3. Sair");
+			System.out.print("Você quer? ");
+			menu = number1.nextInt();
 		} 
+		number1.close();
 	}
 
 }
