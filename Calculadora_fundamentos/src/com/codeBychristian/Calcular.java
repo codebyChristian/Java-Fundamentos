@@ -89,10 +89,15 @@ public class Calcular {
 			} else if(menu == 2) {
 				System.out.println("==HISTÓRICO DE USO:");
 				System.out.println(String.format("Esse é o total de operações %d ", todasOperacoes.size()));
-// Apresentar todas as operções, usando for:				
-				for (int i = 0; i < todasOperacoes.size(); i++ ) {
-					System.out.println(todasOperacoes.get(i));
-				}
+// Apresentar todas as operções, usando for:
+				
+				// for: simplificado, determinando o lâmbida (->)
+				todasOperacoes.forEach(itemOperacoes -> System.out.println(todasOperacoes));
+				
+				// for: com verbosidade
+//				for (int i = 0; i < todasOperacoes.size(); i++ ) {
+//					System.out.println(todasOperacoes.get(i));
+//				}
 				
 			}
 			System.out.println("***Escolha uma opção:***");
