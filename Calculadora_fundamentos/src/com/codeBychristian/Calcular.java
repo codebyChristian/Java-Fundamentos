@@ -1,6 +1,7 @@
 package com.codeBychristian;
 
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Calcular {
@@ -36,19 +37,37 @@ public class Calcular {
 				System.out.println("======= MINI CALCULADORA =======");
 
 				System.out.println("Digite o primeiro número: ");
-
-				
-
-				int numero1 = number1.nextInt();
-
+				int numero1 = 0;
+				try {
+					numero1 = number1.nextInt();
+				} catch(InputMismatchException e) {
+					System.out.println(String.format("Valor inválido, Ele receberá valor 1.", e.getMessage()));
+					number1.nextLine();
+					numero1 = 1;
+				} catch(Exception e) {
+					System.out.println("Erro mortal! Tente novamente.");
+				}
 				// Qual a operação
 				System.out.println("Digite a operação: ");
+				
+				
+				
+				
 				char operacao = number1.next().charAt(0);
-
+				
+				
 				System.out.println("Digite o segundo número: ");
 
-				int numero2 = number1.nextInt();
-
+				int numero2 = 0;
+				try {
+					numero2 = number1.nextInt();
+				} catch(InputMismatchException e) {
+					System.out.println(String.format("Número inválido, Ele receberá valor 1.", e.getMessage()));
+					number1.nextLine();
+					numero2 = 1;
+				} catch (Exception e) {
+					System.out.println("Erro mortal! Tente novamente.");
+				}
 				// Interpolação
 				System.out.println(String.format("Você quer fazer a operação %d %c %d", numero1, operacao, numero2));
 
@@ -74,7 +93,13 @@ public class Calcular {
 					finalValor = numero1 - numero2;
 					break;
 				case '/':
+					try {
 					finalValor = numero1 / numero2;
+					} catch(ArithmeticException e) {
+						System.out.println(String.format("Não válido divisão por 0", e.getMessage()));
+					} catch(Exception e) {
+						System.out.println("Erro mortal, Tente novamente.");
+					}
 					break;
 				default:
 					System.out.println("Ocorreu um erro... Tente novamente:");
@@ -105,7 +130,15 @@ public class Calcular {
 			System.out.println("2. Histórico de operações");
 			System.out.println("3. Sair");
 			System.out.print("Você quer? ");
-			menu = number1.nextInt();
+			
+			try {
+				menu = number1.nextInt();
+			} catch(InputMismatchException e) {
+				System.out.println(String.format("Digite um número válido.", e.getMessage()));
+				number1.nextLine();
+			} catch(Exception e) {
+				System.out.println("Erro mortal, tente novamente.");
+			}
 		} 
 		number1.close();
 	}
