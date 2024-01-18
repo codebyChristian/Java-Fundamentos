@@ -12,9 +12,10 @@ public class Main {
 		ferrari.setNome("Toreto");
 		ferrari.setPlaca(111333);
 		ferrari.setQuantidadePortas(2);
+		ferrari.abastecer(11);
 // Acessar dados pelo método get()	
 		System.out.println(ferrari.getMarca());
-		
+		System.out.println(ferrari.getCapacidadeDeGasolina());
 		ferrari.ligar();
 		
 		Carros gol = new Carros();

@@ -9,7 +9,7 @@ public class Carros {
 	private String nome;
 	private String chassi;
 	private String marca;
-	
+	private float capacidadeDeGasolina;
 	
 	
 	
@@ -54,7 +54,11 @@ public class Carros {
 		this.marca = marca;
 	}
 
-	
+	public float getCapacidadeDeGasolina() {
+		return capacidadeDeGasolina;
+	}
+
+
 // Métodos
 
 
@@ -67,7 +71,10 @@ public class Carros {
 		System.out.println("Carro desligado...");
 	}
 	
-	
+	public void abastecer(float litros) {
+		capacidadeDeGasolina += litros;
+		
+	}
 	
 		
 }
