@@ -42,8 +42,14 @@ public class Carros {
 		return chassi;
 	}
 
-	public void setChassi(String chassi) {
-		this.chassi = chassi;
+	public void setChassi(String chassi) throws Exception{
+		if(chassi.length() == 7) {
+			this.chassi = chassi;
+		} else {
+			throw new Exception("O chassi adulterado ou incorreto");
+		}
+		
+		
 	}
 
 	public String getMarca() {
