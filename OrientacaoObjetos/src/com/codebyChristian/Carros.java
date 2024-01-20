@@ -1,5 +1,7 @@
 package com.codebyChristian;
 
+import com.codebychristian.java.excecoes.ChassiInvalidoExpection;
+
 public class Carros {
 
 // Para utilizar o get() e set(), precisamos usar como private
@@ -46,7 +48,8 @@ public class Carros {
 		if(chassi.length() == 7) {
 			this.chassi = chassi;
 		} else {
-			throw new Exception("O chassi adulterado ou incorreto");
+			
+			throw new ChassiInvalidoExpection(chassi);
 		}
 		
 		
