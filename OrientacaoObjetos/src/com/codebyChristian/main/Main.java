@@ -11,13 +11,13 @@ public class Main {
 			ferrari.setMarca("Fiat");
 			ferrari.setNome("Toreto");
 			ferrari.setPlaca(111333);
-			ferrari.setQuantidadePortas(2);
 	// testendo set - chassi
-			ferrari.setChassi("Ya2829");
+			ferrari.setChassi("1234567");
 			ferrari.abastecer(11);
 	// Acessar dados pelo método get()	
 			System.out.println(ferrari.getMarca());
 			System.out.println(ferrari.getCapacidadeDeGasolina());
+			System.out.println(ferrari.getQuantidadeRodas());
 			ferrari.ligar();
 		} catch (Exception e) {
 			System.out.println("Erro..." + e.getMessage());
@@ -28,7 +28,6 @@ public class Main {
 		gol.setMarca("Sei lá");
 		gol.setNome("Gol bolinha");
 		gol.setPlaca(212132);
-		gol.setQuantidadePortas(2);
 // Acessar dados pelo método get()	
 		System.out.println(gol.getNome());
 		//ferrari.ligar();
