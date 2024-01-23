@@ -11,6 +11,10 @@ public class Main {
 			ferrari.setMarca("Fiat");
 			ferrari.setNome("Toreto");
 			ferrari.setPlaca(111333);
+// Acessando construtores
+			Carros celta = new Carros("celta", "chevrolet");
+			System.out.println(celta.getNome());
+			System.out.println(celta.getMarca());
 	// testendo set - chassi
 			ferrari.setChassi("1234567");
 			ferrari.abastecer(11);
