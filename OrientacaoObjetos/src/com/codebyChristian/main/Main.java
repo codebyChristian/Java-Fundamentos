@@ -22,7 +22,9 @@ public class Main {
 			System.out.println(ferrari.getMarca());
 			System.out.println(ferrari.getCapacidadeDeGasolina());
 			System.out.println(ferrari.getQuantidadeRodas());
+			System.out.println(String.format("O veiculo %s está ligado? %b", ferrari.getNome(), ferrari.isLigado()));
 			ferrari.ligar();
+			System.out.println(String.format("O veiculo %s está ligado? %b", ferrari.getNome(), ferrari.isLigado()));
 		} catch (Exception e) {
 			System.out.println("Erro..." + e.getMessage());
 		}
