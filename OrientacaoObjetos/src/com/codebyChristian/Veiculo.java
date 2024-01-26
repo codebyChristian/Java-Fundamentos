@@ -1,5 +1,6 @@
 package com.codebyChristian;
 
+import com.codebychristian.java.excecoes.AbastecerLigadoException;
 import com.codebychristian.java.excecoes.ChassiInvalidoExpection;
 
 public class Veiculo {
@@ -42,7 +43,7 @@ public class Veiculo {
 		return chassi;
 	}
 
-	public void setChassi(String chassi) throws Exception{
+	public void setChassi(String chassi) throws ChassiInvalidoExpection{
 		if(chassi.length() == 7) {
 			this.chassi = chassi;
 		} else {
@@ -69,11 +70,6 @@ public class Veiculo {
 		return ligado;
 	}
 	
-	
-
-
-
-
 // Métodos
 
 
@@ -88,8 +84,13 @@ public class Veiculo {
 		System.out.println("Carro desligado...");
 	}
 	
-	public void abastecer(float litros) {
-		capacidadeDeGasolina += litros;
+	public void abastecer(float litros) throws AbastecerLigadoException {
+		if(!this.ligado) {
+			capacidadeDeGasolina += litros;
+		} else {
+			throw new AbastecerLigadoException();
+		}
+		
 		
 	}
 	
