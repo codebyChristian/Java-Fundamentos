@@ -12,9 +12,11 @@ public class Veiculo {
 	private String chassi;
 	private String marca;
 	private float capacidadeDeGasolina;
+	private Boolean ligado;
 	
-	
-	
+	public Veiculo() {
+		this.ligado = false;
+	}
 	
 	public int getPlaca() {
 		return placa;
@@ -26,9 +28,7 @@ public class Veiculo {
 
 	public int getQuantidadeRodas() {
 		return quantidadeRodas;
-	}
-
-	
+	}	
 
 	public String getNome() {
 		return nome;
@@ -65,6 +65,10 @@ public class Veiculo {
 		return capacidadeDeGasolina;
 	}
 	
+	public Boolean isLigado() {
+		return ligado;
+	}
+	
 	
 
 
@@ -73,14 +77,14 @@ public class Veiculo {
 // Métodos
 
 
-
-
 	public void ligar() {
+		this.ligado = true;
 		System.out.println("Carro ligado...");
 		
 	}
 	
 	public void desligar() {
+		this.ligado = false;
 		System.out.println("Carro desligado...");
 	}
 	

@@ -12,8 +12,6 @@ public class Carros extends Veiculo {
 		this.setMarca(marca);
 	}
 	
-	public Carros(String nome, String chassi, String marca) {
-		
-	}
+	
 	
 }
