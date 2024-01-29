@@ -3,7 +3,7 @@ package com.codebyChristian;
 import com.codebychristian.java.excecoes.AcelerarVeiculoException;
 import com.codebychristian.java.excecoes.FrearVeiculoException;
 
-public class Moto extends Veiculo {
+public final class Moto extends Veiculo {
 	
 	public Moto() {
 		this.quantidadeRodas = 2;
@@ -34,5 +34,7 @@ public class Moto extends Veiculo {
 			throw new FrearVeiculoException();
 		}
 	}
+	
+
 
 }

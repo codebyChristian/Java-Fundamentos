@@ -85,26 +85,25 @@ public class Veiculo {
 // Métodos
 
 
-	public void ligar() {
+	public final void ligar() {
 		this.ligado = true;
 		this.velocidade = 0;
 		System.out.println("Carro ligado...");
 		
 	}
 	
-	public void desligar() {
+	public final void desligar() {
 		this.ligado = false;
 		this.velocidade = 0;
 		System.out.println("Carro desligado...");
 	}
 	
-	public void abastecer(float litros) throws AbastecerLigadoException {
+	public final void abastecer(float litros) throws AbastecerLigadoException {
 		if(!this.ligado) {
 			capacidadeDeGasolina += litros;
 		} else {
 			throw new AbastecerLigadoException();
-		}
-		
+		}	
 		
 	}
 	
