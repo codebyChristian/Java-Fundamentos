@@ -5,7 +5,7 @@ import com.codebychristian.java.excecoes.AcelerarVeiculoException;
 import com.codebychristian.java.excecoes.ChassiInvalidoExpection;
 import com.codebychristian.java.excecoes.FrearVeiculoException;
 
-public class Veiculo {
+public abstract class Veiculo {
 
 // Para utilizar o get() e set(), precisamos usar como private
  	
