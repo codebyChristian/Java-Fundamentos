@@ -122,6 +122,8 @@ public abstract class Veiculo {
 			throw new FrearVeiculoException();
 		}
 	}
+	
+	public abstract void preparar();
 		
 }
 

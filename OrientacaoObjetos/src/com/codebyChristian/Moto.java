@@ -34,6 +34,12 @@ public final class Moto extends Veiculo {
 			throw new FrearVeiculoException();
 		}
 	}
+
+	@Override
+	public void preparar() {
+		System.out.println("Coloque o capacete!");
+		
+	}
 	
 
 

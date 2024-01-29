@@ -23,6 +23,12 @@ public int getQuantidadePortas() {
 		this.setNome(nome);
 		this.setMarca(marca);
 	}
+
+	@Override
+	public void preparar() {
+		System.out.println("Coloque o cinto de segurança!");
+		
+	}
 	
 	
 	

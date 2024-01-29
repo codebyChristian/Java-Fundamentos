@@ -33,6 +33,7 @@ public class Main {
 			System.out.println(ferrari.getQuantidadeRodas());
 			System.out.println(String.format("O veiculo %s está ligado? %b", ferrari.getNome(), ferrari.isLigado()));
 			ferrari.abastecer(11);
+			ferrari.preparar();
 			ferrari.ligar();
 			//ferrari.abastecer(11);    // Se abastecer ligado vai para a Exception
 			System.out.println(String.format("O veiculo %s está ligado? %b", ferrari.getNome(), ferrari.isLigado()));
