@@ -1,7 +1,9 @@
 package com.codebyChristian;
 
 import com.codebychristian.java.excecoes.AbastecerLigadoException;
+import com.codebychristian.java.excecoes.AcelerarVeiculoException;
 import com.codebychristian.java.excecoes.ChassiInvalidoExpection;
+import com.codebychristian.java.excecoes.FrearVeiculoException;
 
 public class Veiculo {
 
@@ -14,9 +16,11 @@ public class Veiculo {
 	private String marca;
 	private float capacidadeDeGasolina;
 	private Boolean ligado;
+	protected float velocidade;
 	
 	public Veiculo() {
 		this.ligado = false;
+		this.velocidade = 0;
 	}
 	
 	public int getPlaca() {
@@ -69,18 +73,28 @@ public class Veiculo {
 	public Boolean isLigado() {
 		return ligado;
 	}
+	public float getVelocidade() {
+		return velocidade;
+	}
+	
+	
+	
+	
+	
 	
 // Métodos
 
 
 	public void ligar() {
 		this.ligado = true;
+		this.velocidade = 0;
 		System.out.println("Carro ligado...");
 		
 	}
 	
 	public void desligar() {
 		this.ligado = false;
+		this.velocidade = 0;
 		System.out.println("Carro desligado...");
 	}
 	
@@ -94,6 +108,21 @@ public class Veiculo {
 		
 	}
 	
+	public void acelerar() throws AcelerarVeiculoException {
+		if(this.ligado) {
+			this.velocidade += 10;
+		} else {
+			throw new AcelerarVeiculoException();
+		}
+	}
+	
+	public void frear() throws FrearVeiculoException {
+		if(this.ligado) {
+			this.velocidade -= 10;
+		} else {
+			throw new FrearVeiculoException();
+		}
+	}
 		
 }
 

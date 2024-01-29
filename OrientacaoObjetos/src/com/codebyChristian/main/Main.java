@@ -1,5 +1,7 @@
 package com.codebyChristian.main;
 
+
+
 import com.codebyChristian.Carros;
 import com.codebyChristian.Moto;
 import com.codebyChristian.Veiculo;
@@ -11,7 +13,7 @@ public class Main {
 	public static void main(String[] args) {
 // Alterando valores pelo método set() 
 		try {
-			Veiculo ferrari = new Carros();  // Poliformismo
+			Veiculo ferrari = new Moto();  // Poliformismo
 			//Carros ferrari = new Carros();
 			ferrari.setMarca("Fiat");
 			ferrari.setNome("Toreto");
@@ -20,25 +22,25 @@ public class Main {
 			Carros celta = new Carros("celta", "chevrolet");
 			System.out.println(celta.getNome());
 			System.out.println(celta.getMarca());
-	// testendo set - chassi - portas
-			((Carros)ferrari).setQuantidadePortas(4);
+// testendo set - chassi - portas
+			//((Carros)ferrari).setQuantidadePortas(4);
 			ferrari.setChassi("1234567");
 			ferrari.abastecer(11);
-	// Acessar dados pelo método get()	
-			System.out.println(String.format("O %s tem %d portas", ferrari.getNome(), ((Carros)ferrari).getQuantidadePortas()));
+// Acessar dados pelo método get()	
+			//System.out.println(String.format("O %s tem %d portas", ferrari.getNome(), ((Carros)ferrari).getQuantidadePortas()));
 			System.out.println(ferrari.getMarca());
 			System.out.println(ferrari.getCapacidadeDeGasolina());
 			System.out.println(ferrari.getQuantidadeRodas());
 			System.out.println(String.format("O veiculo %s está ligado? %b", ferrari.getNome(), ferrari.isLigado()));
 			ferrari.abastecer(11);
 			ferrari.ligar();
-			ferrari.abastecer(11);
+			//ferrari.abastecer(11);    // Se abastecer ligado vai para a Exception
 			System.out.println(String.format("O veiculo %s está ligado? %b", ferrari.getNome(), ferrari.isLigado()));
-			
-// moto
-			Moto pop = new Moto();
-			pop.setMarca("Honda");
-			pop.setNome("Pop100");
+			ferrari.acelerar();
+			System.out.println(String.format("A velocidade é de %f ", ferrari.getVelocidade()));
+			ferrari.frear();
+			System.out.println(String.format("A velocidade é de %f ", ferrari.getVelocidade()));
+
 			
 		} catch (ChassiInvalidoExpection e) {
 			System.out.println("Chassi é incorreto!");
