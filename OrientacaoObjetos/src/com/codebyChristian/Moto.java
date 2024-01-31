@@ -3,7 +3,7 @@ package com.codebyChristian;
 import com.codebychristian.java.excecoes.AcelerarVeiculoException;
 import com.codebychristian.java.excecoes.FrearVeiculoException;
 
-public final class Moto extends Veiculo {
+public final class Moto extends VeiculoBase {
 	
 	public Moto() {
 		this.quantidadeRodas = 2;

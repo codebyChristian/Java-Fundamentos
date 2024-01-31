@@ -4,9 +4,11 @@ import com.codebychristian.java.excecoes.AbastecerLigadoException;
 import com.codebychristian.java.excecoes.AcelerarVeiculoException;
 import com.codebychristian.java.excecoes.ChassiInvalidoExpection;
 import com.codebychristian.java.excecoes.FrearVeiculoException;
-import com.codebychristian.java.interfaces.IVeiculoInterface;
+import com.codebychristian.java.interfaces.IVeiculo;
+import com.codebychristian.java.interfaces.Ligado;
+import com.codebychristian.java.interfaces.Movimento;
 
-public abstract class Veiculo implements IVeiculoInterface {
+public abstract class VeiculoBase implements IVeiculo, Ligado, Movimento {
 
 // Para utilizar o get() e set(), precisamos usar como private
  	
@@ -19,7 +21,7 @@ public abstract class Veiculo implements IVeiculoInterface {
 	private Boolean ligado;
 	protected float velocidade;
 	
-	public Veiculo() {
+	public VeiculoBase() {
 		this.ligado = false;
 		this.velocidade = 0;
 	}

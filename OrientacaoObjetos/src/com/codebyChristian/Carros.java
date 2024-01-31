@@ -1,6 +1,6 @@
 package com.codebyChristian;
 
-public class Carros extends Veiculo {
+public class Carros extends VeiculoBase {
 	
 	private int quantidadePortas;
 

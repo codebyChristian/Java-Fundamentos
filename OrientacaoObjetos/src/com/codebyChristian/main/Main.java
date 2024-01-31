@@ -3,8 +3,7 @@ package com.codebyChristian.main;
 
 
 import com.codebyChristian.Carros;
-import com.codebyChristian.Moto;
-import com.codebyChristian.Veiculo;
+import com.codebyChristian.VeiculoBase;
 import com.codebychristian.java.excecoes.AbastecerLigadoException;
 import com.codebychristian.java.excecoes.ChassiInvalidoExpection;
 
@@ -13,7 +12,7 @@ public class Main {
 	public static void main(String[] args) {
 // Alterando valores pelo método set() 
 		try {
-			Veiculo ferrari = new Moto();  // Poliformismo
+			VeiculoBase ferrari = new Carros();  // Poliformismo
 			//Carros ferrari = new Carros();
 			ferrari.setMarca("Fiat");
 			ferrari.setNome("Toreto");
