@@ -4,8 +4,9 @@ import com.codebychristian.java.excecoes.AbastecerLigadoException;
 import com.codebychristian.java.excecoes.AcelerarVeiculoException;
 import com.codebychristian.java.excecoes.ChassiInvalidoExpection;
 import com.codebychristian.java.excecoes.FrearVeiculoException;
+import com.codebychristian.java.interfaces.IVeiculoInterface;
 
-public abstract class Veiculo {
+public abstract class Veiculo implements IVeiculoInterface {
 
 // Para utilizar o get() e set(), precisamos usar como private
  	
