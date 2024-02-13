@@ -13,7 +13,7 @@ public class Main {
 		Scanner scanner = new Scanner(System.in);
 		
 		for (int i = 0; i < numbers.length; i++) {
-			System.out.println("Adicione um número a lista!");
+			System.out.println("O Array terá 5 números! Digite eles.");
 			int number = scanner.nextInt();
 			numbers[i] = number;
 		}
@@ -25,17 +25,38 @@ public class Main {
 		for (int i = 0; i < numbers.length; i++) {
 			if(numbers[i] == busca) {
 				marcadorResultado = i;
+				break;
 			} 
 		}
 		if (marcadorResultado < 0) {
 			System.out.println("Número não encontrado na lista.");
 		} else {
 			System.out.println(String.format("O número %d está na posição %d.", busca, marcadorResultado));
-		}		
-		// Fim Algoritmo de Busca:		
+		}					
+		// Fim Algoritmo de Busca:
+		
+		// Inicio Ordenação -- SELECTION SORT --
+		// Vetor desodernado
+		imprimirArray(numbers);
+		for (int i = 0; i < numbers.length; i++) {
+			int menorAlgoritmo = i;
+			for (int j = i + 1; j < numbers.length; j++) {
+				if (numbers[j] < numbers[menorAlgoritmo]) {
+					menorAlgoritmo = j;
+				}
+			}
+			// Aqui irá ocorre a seleção
+			int temp = numbers[menorAlgoritmo];
+			numbers[menorAlgoritmo] = numbers[i];
+			numbers[i] = temp;
+		}
+		System.out.println("Vetor ordenado!");
+		imprimirArray(numbers);
+		// Fim Ordenação -- SELECTION SORT --
+				
 		System.out.println("Vetor");
 		imprimirArray(numbers);
-		scanner.close();		
+		scanner.close();
 	}
 	
 	private static void imprimirArray(int[] array) {
