@@ -1,51 +1,30 @@
-package com.codebychristian.algoritmos;
-
+package com.codebychristian.binaria;
 
 import java.util.Scanner;
 
 public class Main {
 
 	public static void main(String[] args) {
+		// Inicio Busca Binária
 		
-// Em um espaço de memória há 5 divisões, começando do 0, 1, 2, 3, 4;		
 		int[] numbers = new int[5];
 		
 		Scanner scanner = new Scanner(System.in);
 		
-		for (int i = 0; i < numbers.length; i++) {
-			System.out.println("O Array terá 5 números! Digite eles.");
-			int number = scanner.nextInt();
-			numbers[i] = number;
+		for(int i = 0; i < numbers.length; i++) {
+			System.out.println("Digite 5 números em sequência:");
+			int userNumber  = scanner.nextInt();
+			numbers[i] = userNumber;
 		}
-		
-		// Inicio Ordenação -- SELECTION SORT --
-		// Vetor desodernado
-		imprimirArray(numbers);
-		for (int i = 0; i < numbers.length; i++) {
-			int menorAlgoritmo = i;
-			for (int j = i + 1; j < numbers.length; j++) {
-				if (numbers[j] < numbers[menorAlgoritmo]) {
-					menorAlgoritmo = j;
-				}
-			}
-			// Aqui irá ocorre a seleção
-			int temp = numbers[menorAlgoritmo];
-			numbers[menorAlgoritmo] = numbers[i];
-			numbers[i] = temp;
-		}
-		System.out.println("Vetor ordenado!");
-		imprimirArray(numbers);
-		// Fim Ordenação -- SELECTION SORT --
-		
 		//Busca Binária Inicio
 		int resultado = -1;
 		int inicio = 0;
 		int meio = 0;
 		int fim = numbers.length - 1;
-				
+		
 		System.out.println("Qual número a ser encontrado?");
 		int numeroBusca = scanner.nextInt();
-				
+		
 		while (inicio <= fim) {
 			meio = (inicio + fim) / 2;
 			// Busca a direita
@@ -64,15 +43,14 @@ public class Main {
 		} else {
 			System.out.println(String.format("O número %d está na posição %d.", numeroBusca, resultado));
 		}
-				
-				
-				//Busca Binária Fim
 		
-		System.out.println("Vetor");
+		
+		//Busca Binária Fim
 		imprimirArray(numbers);
 		scanner.close();
 	}
 	
+	//Impressão
 	private static void imprimirArray(int[] array) {
 		for (int i = 0; i < array.length; i++) {
 			System.out.println(array[i]);
