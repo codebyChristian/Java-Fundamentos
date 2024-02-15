@@ -10,6 +10,9 @@ public class Main {
 		
 		Scanner scanner = new Scanner(System.in);
 		
+		// Melhor caso: 1 posição  - O(1) 
+		// Pior caso: n posição
+		// O(n) 
 		for(int i = 0; i < numbers.length; i++) {
 			System.out.println("Digite 5 números em seguida!");
 			int userNumbers = scanner.nextInt();

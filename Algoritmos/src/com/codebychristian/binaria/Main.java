@@ -13,7 +13,7 @@ public class Main {
 		
 		for(int i = 0; i < numbers.length; i++) {
 			System.out.println("Digite 5 números em sequência:");
-			int userNumber  = scanner.nextInt();
+			Integer userNumber  = scanner.nextInt();
 			numbers[i] = userNumber;
 		}
 		//Busca Binária Inicio

@@ -18,6 +18,8 @@ public class Main {
 			numbers[i] = number;
 		}
 		
+		// Melho caso: N * N = N²  - O(N²) 
+		// Pior caso: N * N = N²  - O(N²)		
 		// Inicio Ordenação -- SELECTION SORT --
 		// Vetor desodernado
 		imprimirArray(numbers);
