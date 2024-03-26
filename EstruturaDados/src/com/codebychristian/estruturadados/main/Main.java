@@ -10,14 +10,16 @@ public class Main {
 		// TODO Auto-generated method stub
 		System.out.println("--QUAL OPÇÃO--");
 		System.out.println("1. Gerenciar memória");
+		System.out.println("2. Vetores");
 		Scanner scanner = new Scanner(System.in);
 		int opcao = scanner.nextInt();
 		
 		switch (opcao) {
 		case 1:
-			fazerGerenciamentoMemoria();
-			
+			fazerGerenciamentoMemoria();	
 			break;
+		case 2:
+			fazerVetor();
 		}
 		scanner.close();
 	}
@@ -43,6 +45,14 @@ public class Main {
 		System.out.println(person2.toString());
 		System.out.println(person1.equals(person2));
 		
+	}
+	
+	public static void fazerVetor() {
+		Pessoa[] vetoPessoas = new Pessoa[5];   // 0, 1, 2, 3, 4
+		vetoPessoas[4] = new Pessoa(5, "Chaves");
+		System.out.println(vetoPessoas[4].getNome());
+		int[] vetoNumeros = new int[1];         // valuetype (int) sempre inicia com 0
+		System.out.println(vetoNumeros[0]);     
 	}
 
 }
