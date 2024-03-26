@@ -1,21 +1,20 @@
 package com.codebychristian.estruturadados.vetores;
 
-import com.codebychristian.estruturadados.modelos.Pessoa;
-
-public class Vetor {
+public class Vetor<T> {
 	
-	private Pessoa[] person;
+	private Object[] elementos;
 	
 	public Vetor(int capacidade) {
-		this.person = new Pessoa[capacidade];
+		this.elementos = new Object[capacidade];
 	}
 	
-	public void inserirArrey(int posicao, Pessoa person) {
-		this.person[posicao] = person;
+	public void inserirArrey(int posicao, T element) {
+		this.elementos[posicao] = element;
 	}
 	
-	public Pessoa recuperarArrey(int posicao) {
-		return this.person[posicao];
+	@SuppressWarnings("unchecked")
+	public T recuperarArrey(int posicao) {
+		return (T)this.elementos[posicao];
 	}
 
 }

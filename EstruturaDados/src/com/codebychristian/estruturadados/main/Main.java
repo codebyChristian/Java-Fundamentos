@@ -49,9 +49,14 @@ public class Main {
 	}
 	
 	public static void fazerVetor() {
-		Vetor vetorPessoas = new Vetor(5);   // 0 1 2 3 4
-		vetorPessoas.inserirArrey(4, new Pessoa(4, "Chistian Sss"));  
-		System.out.println(vetorPessoas.recuperarArrey(4).getNome());
+		Vetor<Pessoa> vetorPessoa = new Vetor<Pessoa>(5);   // 0 1 2 3 4
+		vetorPessoa.inserirArrey(4, new Pessoa(4, "Chistian Sss"));  
+		System.out.println(vetorPessoa.recuperarArrey(4).getNome());
+		// Adicionar tipos diferentes
+		Vetor<Integer> vetorNumbers = new Vetor<Integer>(3);
+		vetorNumbers.inserirArrey(1, 1);
+		System.out.println(vetorNumbers.recuperarArrey(1));
+	
 	}
 
 }
