@@ -35,13 +35,14 @@ public class Main {
 		System.out.println("***********");
 		Pessoa person1 = new Pessoa(0, "Chris");
 		System.out.println(person1.toString());
-		Pessoa person2 = person1;
+		Pessoa person2 = new Pessoa(0, "Chris");   // Cria um novo espaço no Heap
 		System.out.println(person2.toString());
 		System.out.println("***********");
-		person2.setNome("Chistian");
+		person2.setNome("Chistian");      
 		System.out.println(person1.toString());
 		System.out.println(person2.toString());
-		System.out.println(person1 == person2);
+		System.out.println(person1.equals(person2));
+		
 	}
 
 }
