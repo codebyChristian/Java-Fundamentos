@@ -3,6 +3,7 @@ package com.codebychristian.estruturadados.main;
 import java.util.Scanner;
 
 import com.codebychristian.estruturadados.modelos.Pessoa;
+import com.codebychristian.estruturadados.vetores.Vetor;
 
 public class Main {
 
@@ -48,11 +49,9 @@ public class Main {
 	}
 	
 	public static void fazerVetor() {
-		Pessoa[] vetoPessoas = new Pessoa[5];   // 0, 1, 2, 3, 4
-		vetoPessoas[4] = new Pessoa(5, "Chaves");
-		System.out.println(vetoPessoas[4].getNome());
-		int[] vetoNumeros = new int[1];         // valuetype (int) sempre inicia com 0
-		System.out.println(vetoNumeros[0]);     
+		Vetor vetorPessoas = new Vetor(5);   // 0 1 2 3 4
+		vetorPessoas.inserirArrey(4, new Pessoa(4, "Chistian Sss"));  
+		System.out.println(vetorPessoas.recuperarArrey(4).getNome());
 	}
 
 }
