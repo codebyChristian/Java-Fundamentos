@@ -34,7 +34,21 @@ public class Vetor<T> {
 		if(posicao > this.elementos.length) {
 			throw new IllegalArgumentException(String.format("Posição inválida [%d]", posicao));
 		}
-		this.elementos[posicao] = element;
+		if(this.elementos[posicao] != null) {
+			// 1, 2, 3, 4  tranformar // 1, 5, 2, 3, 4
+			Object[] arrayFinal = Arrays.copyOfRange(this.elementos, posicao, this.elementos.length);
+			Object[] arrayInicio = new Object[posicao + 1];
+			System.arraycopy(this.elementos, 0, arrayInicio, 0, posicao);
+			arrayInicio[arrayInicio.length - 1] = element;
+			// ArrayInicio = 1, 5
+			// ArrayFinal = 2, 3, 4   (falta juntar)
+			int juntarArray = arrayFinal.length + arrayInicio.length;
+			this.elementos = new Object[juntarArray];
+			System.arraycopy(arrayInicio, 0, this.elementos, 0, arrayInicio.length);
+			System.arraycopy(arrayFinal, 0, this.elementos, arrayInicio.length, arrayFinal.length);
+		} else {
+			this.elementos[posicao] = element;
+		}
 	}
 	
 	@SuppressWarnings("unchecked")
