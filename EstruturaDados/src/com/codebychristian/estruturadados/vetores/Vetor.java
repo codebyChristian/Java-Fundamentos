@@ -1,5 +1,7 @@
 package com.codebychristian.estruturadados.vetores;
 
+import java.util.Arrays;
+
 public class Vetor<T> {
 	
 	private Object[] elementos;
@@ -16,12 +18,20 @@ public class Vetor<T> {
 	}
 	
 	public void inserir(T element) {
+		if(posicao >= this.elementos.length) {
+			this.elementos = Arrays.copyOf(this.elementos, this.elementos.length + 1);
+		}
 		this.elementos[this.posicao] = element;
 		posicao++;
 	}
 	
+	@Override
+	public String toString() {
+		return "Vetor [elementos=" + Arrays.toString(elementos) + "]";
+	}
+
 	public void inserirArrey(int posicao, T element) {
-		if(posicao < this.elementos.length) {
+		if(posicao > this.elementos.length) {
 			throw new IllegalArgumentException(String.format("Posição inválida [%d]", posicao));
 		}
 		this.elementos[posicao] = element;
