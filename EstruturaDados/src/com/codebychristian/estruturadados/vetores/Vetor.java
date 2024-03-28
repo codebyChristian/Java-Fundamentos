@@ -25,10 +25,6 @@ public class Vetor<T> {
 		posicao++;
 	}
 	
-	@Override
-	public String toString() {
-		return "Vetor [elementos=" + Arrays.toString(elementos) + "]";
-	}
 
 	public void inserirArrey(int posicao, T element) {
 		if(posicao > this.elementos.length) {
@@ -53,7 +49,19 @@ public class Vetor<T> {
 	
 	@SuppressWarnings("unchecked")
 	public T recuperarArrey(int posicao) {
+		if(posicao >= tamanho()) {
+			throw new IllegalArgumentException(String.format("Posição não encontrada [%d]", posicao));
+		}
 		return (T)this.elementos[posicao];
+	}
+	
+	public int tamanho() {
+		return this.elementos.length;
+	}
+	
+	@Override
+	public String toString() {
+		return "Vetor [elementos=" + Arrays.toString(elementos) + "]";
 	}
 
 }

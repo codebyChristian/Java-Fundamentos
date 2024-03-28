@@ -55,8 +55,12 @@ public class Main {
 		vetorPessoa.inserir(new Pessoa(3, "Maquina 5"));
 		vetorPessoa.inserir(new Pessoa(4, "Besta Injaulada 4"));
 		vetorPessoa.inserir(new Pessoa(5, "Bolso 3"));
-		vetorPessoa.inserir(new Pessoa(6, "Siiiiiii 2"));
+		vetorPessoa.inserirArrey(1, new Pessoa(6, "Siiiiiii "));
 		System.out.println(vetorPessoa);
+		System.out.println("Lista Arrays");
+		for (int i = 0; i < vetorPessoa.tamanho(); i++) {
+			System.out.println(vetorPessoa.recuperarArrey(i).getNome());
+		}
 	}
 
 }
