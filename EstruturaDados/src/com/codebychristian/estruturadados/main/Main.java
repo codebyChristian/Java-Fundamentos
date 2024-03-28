@@ -61,6 +61,15 @@ public class Main {
 		for (int i = 0; i < vetorPessoa.tamanho(); i++) {
 			System.out.println(vetorPessoa.recuperarArrey(i).getNome());
 		}
+		// recurar no posicao 1,  referencia com indice
+		Pessoa p1 = vetorPessoa.recuperarArrey(1);
+		Pessoa indicErrado = new Pessoa(15, "Perido");
+		System.out.println(vetorPessoa.contemParametro(p1));
+		System.out.println(vetorPessoa.contemParametro(indicErrado));
+		System.out.println(vetorPessoa.indice(p1));
+		System.out.println(vetorPessoa.indice(indicErrado));
+		
+		
 	}
 
 }
