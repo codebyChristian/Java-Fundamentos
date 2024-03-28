@@ -68,8 +68,10 @@ public class Main {
 		System.out.println(vetorPessoa.contemParametro(indicErrado));
 		System.out.println(vetorPessoa.indice(p1));
 		System.out.println(vetorPessoa.indice(indicErrado));
-		
-		vetorPessoa.remove(1);
+		// remover 
+		vetorPessoa.remove(2);
+		System.out.println(vetorPessoa);
+		vetorPessoa.remove(p1);
 		System.out.println(vetorPessoa);
 	}
 

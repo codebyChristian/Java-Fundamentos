@@ -92,6 +92,14 @@ public class Vetor<T> {
 		System.arraycopy(arrayFinal, 0, this.elementos, arrayInicio.length, arrayFinal.length);
 	}
 	
+	public void remove(T element) {
+		int posicao = indice(element);
+		if(posicao >= tamanho() - 1) {
+			throw new IllegalArgumentException("Posição inválida. " + element.toString());
+		}
+		remove(posicao);
+	}
+	
 	@Override
 	public String toString() {
 		return "Vetor [elementos=" + Arrays.toString(elementos) + "]";
