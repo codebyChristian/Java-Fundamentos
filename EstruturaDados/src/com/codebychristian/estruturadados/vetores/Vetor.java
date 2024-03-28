@@ -42,6 +42,7 @@ public class Vetor<T> {
 			this.elementos = new Object[juntarArray];
 			System.arraycopy(arrayInicio, 0, this.elementos, 0, arrayInicio.length);
 			System.arraycopy(arrayFinal, 0, this.elementos, arrayInicio.length, arrayFinal.length);
+			this.posicao++;
 		} else {
 			this.elementos[posicao] = element;
 		}
@@ -77,6 +78,18 @@ public class Vetor<T> {
 			}
 		}
 		return -1;
+	}
+	
+	public void remove(int posicao) {
+		if(posicao >= tamanho()) {
+			throw new IllegalArgumentException(String.format("Elemento [%d] não encontrado.", posicao));
+		}
+		Object[] arrayFinal = Arrays.copyOfRange(this.elementos, posicao + 1, tamanho());
+		Object[] arrayInicio = Arrays.copyOfRange(this.elementos, 0, posicao);   // já faz -1
+		this.elementos = new Object[tamanho() -1];
+		this.posicao--;
+		System.arraycopy(arrayInicio, 0, this.elementos, 0, arrayInicio.length);
+		System.arraycopy(arrayFinal, 0, this.elementos, arrayInicio.length, arrayFinal.length);
 	}
 	
 	@Override

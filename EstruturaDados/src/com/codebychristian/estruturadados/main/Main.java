@@ -69,7 +69,8 @@ public class Main {
 		System.out.println(vetorPessoa.indice(p1));
 		System.out.println(vetorPessoa.indice(indicErrado));
 		
-		
+		vetorPessoa.remove(1);
+		System.out.println(vetorPessoa);
 	}
 
 }
