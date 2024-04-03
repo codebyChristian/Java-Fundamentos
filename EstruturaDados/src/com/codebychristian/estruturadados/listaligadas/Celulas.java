@@ -11,7 +11,7 @@ public class Celulas<T> {
 	
 	public Celulas(T elemento) {
 		this.elemento = elemento;
-		this.elemento = null;
+		this.proximo = null;
 	}
 
 	public Celulas(T elemento, Celulas<T> proximo) {

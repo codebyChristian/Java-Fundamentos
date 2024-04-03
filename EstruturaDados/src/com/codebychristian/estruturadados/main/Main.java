@@ -2,6 +2,7 @@ package com.codebychristian.estruturadados.main;
 
 import java.util.Scanner;
 
+import com.codebychristian.estruturadados.listaligadas.ListaLigada;
 import com.codebychristian.estruturadados.modelos.Pessoa;
 import com.codebychristian.estruturadados.vetores.Vetor;
 
@@ -12,6 +13,7 @@ public class Main {
 		System.out.println("--QUAL OPÇÃO--");
 		System.out.println("1. Gerenciar memória");
 		System.out.println("2. Vetores");
+		System.out.println("3. Lista Ligada");
 		Scanner scanner = new Scanner(System.in);
 		int opcao = scanner.nextInt();
 		
@@ -21,10 +23,23 @@ public class Main {
 			break;
 		case 2:
 			fazerVetor();
+			break;
+		case 3:
+			fazerListaLigada();
+			break;
 		}
+			
 		scanner.close();
 	}
 	
+	private static void fazerListaLigada() {
+		ListaLigada<Pessoa> listaPessoas = new ListaLigada<Pessoa>();
+		listaPessoas.insere(new Pessoa(1, "Christian"));
+		listaPessoas.insere(new Pessoa(2, "Ernany"));
+		listaPessoas.insere(new Pessoa(3, "Sabad"));
+		System.out.println(listaPessoas.toString());
+	}
+
 	public static void fazerGerenciamentoMemoria() {
 		int a = 3;
 		System.out.println(a);
