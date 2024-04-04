@@ -24,12 +24,45 @@ public class ListaLigada<T> {
 		this.tamanho++;	
 	}
 	
+	public void inserirEm(int posicao, T elemento) {
+		if(posicao >= tamanho()) {
+			throw new IllegalArgumentException(String.format("Não é possivel adicionar [%d]", posicao));
+		}
+		Celulas<T> noAnterior = recuperarNo(posicao - 1);
+		Celulas<T> noAtual = recuperarNo(posicao);
+		Celulas<T> novoNo = new Celulas<>(elemento);
+		
+	}
+	
+	public T recuperar(int posicao) {
+		Celulas<T> no = recuperarNo(posicao);
+		if(no != null) {
+			return no.getElemento();
+		}
+		return null;
+	}
+	
 	public boolean listaVazia() {
 		return this.tamanho == 0;
 	}
 	
 	public int tamanho() {
 		return this.tamanho;
+	}
+	
+	private Celulas<T> recuperarNo(int posicao) {
+		if(posicao >= tamanho()) {
+			throw new IllegalArgumentException(String.format("Não é possivel adicionar [%d]", posicao));
+		}
+		Celulas<T> resultado = null;
+		for(int i = 0; i <= posicao; i++) {
+			if(i == 0) {
+				resultado = this.primeiroNo;
+			} else {
+				resultado = resultado.getProximo();
+			}
+		}
+		return resultado;
 	}
 
 	@Override
