@@ -79,7 +79,7 @@ public class ListaLigada<T> {
 		}
 		return false;
 	}
-	
+
 	public int indeci(T elemento) {
 		for (int i = 0; i < tamanho(); i++) {
 			Celulas<T> noAtual = recuperarNo(i);
@@ -89,8 +89,35 @@ public class ListaLigada<T> {
 		}
 		return -1;
 	}
-	
-	
+
+	public void remover(int posicao) {
+		if (posicao > tamanho()) {
+			throw new IllegalArgumentException(String.format("Posição inválida [%d]", posicao));
+		}
+		if (posicao == 0) {
+			Celulas<T> proximoNo = this.primeiroNo.getProximo();
+			this.primeiroNo = proximoNo;
+		} else if (posicao == tamanho() - 1) {
+			Celulas<T> penultimoNo = recuperarNo(tamanho() - 2);
+			penultimoNo.setProximo(null);
+			this.ultimoNo = penultimoNo;
+		} else {
+			Celulas<T> anteriorNo = recuperarNo(posicao - 1);
+			Celulas<T> proximoNo = recuperarNo(posicao + 1);
+			Celulas<T> noAtual = recuperarNo(posicao);
+			anteriorNo.setProximo(proximoNo);
+			noAtual.setProximo(null);
+		}
+		this.tamanho--;
+	}
+
+	public void remover(T elemento) {
+		int indici = indeci(elemento);
+		if (indici == -1) {
+			throw new IllegalArgumentException(String.format("Elemento não encontrado [%d]", elemento.toString()));
+		}
+		remover(indici);
+	}
 
 	private Celulas<T> recuperarNo(int posicao) {
 		if (posicao >= tamanho()) {
