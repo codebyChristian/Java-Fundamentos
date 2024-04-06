@@ -45,11 +45,11 @@ public class ListaLigada<T> {
 		}
 		this.tamanho++;
 	}
-	
+
 	public void inserirPrimeiro(T elemento) {
 		inserirEm(0, elemento);
 	}
-	
+
 	public void inserirUltimo(T elemento) {
 		inserirEm(tamanho - 1, elemento);
 	}
@@ -69,6 +69,28 @@ public class ListaLigada<T> {
 	public int tamanho() {
 		return this.tamanho;
 	}
+
+	public boolean contem(T elemento) {
+		for (int i = 0; i < tamanho(); i++) {
+			Celulas<T> noAtual = recuperarNo(i);
+			if (noAtual.getElemento() != null && noAtual.getElemento().equals(elemento)) {
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	public int indeci(T elemento) {
+		for (int i = 0; i < tamanho(); i++) {
+			Celulas<T> noAtual = recuperarNo(i);
+			if (noAtual.getElemento() != null && noAtual.getElemento().equals(elemento)) {
+				return i;
+			}
+		}
+		return -1;
+	}
+	
+	
 
 	private Celulas<T> recuperarNo(int posicao) {
 		if (posicao >= tamanho()) {
