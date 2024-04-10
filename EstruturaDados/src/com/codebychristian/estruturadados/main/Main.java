@@ -55,6 +55,7 @@ public class Main {
 		for (int i = 0; i < listaPessoas.tamanho(); i++) {
 			System.out.println(listaPessoas.recuperar(i).toString());
 		}
+
 	}
 
 	public static void fazerGerenciamentoMemoria() {

@@ -1,6 +1,6 @@
 package com.codebychristian.estruturadados.listaligadas;
 
-public class Celulas<T> {
+class Celulas<T> {          //Omitindo o public a class fica visivel apenas dentro do pacote
 
 	private T elemento;
 	private Celulas<T> proximo;
