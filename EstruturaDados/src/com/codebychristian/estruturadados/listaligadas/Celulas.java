@@ -4,6 +4,7 @@ class Celulas<T> {          //Omitindo o public a class fica visivel apenas dent
 
 	private T elemento;
 	private Celulas<T> proximo;
+	private Celulas<T> anterior;
 	
 	public Celulas() {
 		this.proximo = null;
@@ -18,8 +19,6 @@ class Celulas<T> {          //Omitindo o public a class fica visivel apenas dent
 		this.elemento = elemento;
 		this.proximo = proximo;
 	}
-
-
 
 	public T getElemento() {
 		return elemento;
@@ -36,5 +35,15 @@ class Celulas<T> {          //Omitindo o public a class fica visivel apenas dent
 	public void setProximo(Celulas<T> proximo) {
 		this.proximo = proximo;
 	}
+
+	public Celulas<T> getAnterior() {
+		return anterior;
+	}
+
+	public void setAnterior(Celulas<T> anterior) {
+		this.anterior = anterior;
+	}
+	
+	
 
 }
