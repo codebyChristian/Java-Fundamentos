@@ -19,6 +19,7 @@ public class ListaDuplaLigada<T> {
 			this.ultimoNo = novoNo;
 		} else {
 			this.ultimoNo.setProximo(novoNo);
+			novoNo.setAnterior(this.ultimoNo);
 			this.ultimoNo = novoNo;
 		}
 		this.tamanho++;
@@ -31,10 +32,12 @@ public class ListaDuplaLigada<T> {
 		if (posicao == 0) {
 			Celulas<T> novoNo = new Celulas<T>(elemento);
 			novoNo.setProximo(this.primeiroNo);
+			this.primeiroNo.setAnterior(novoNo);
 			this.primeiroNo = novoNo;
 		} else if (posicao == this.tamanho - 1) {
 			Celulas<T> novoNo = new Celulas<T>(elemento);
 			this.ultimoNo.setProximo(novoNo);
+			novoNo.setAnterior(this.ultimoNo);
 			this.ultimoNo = novoNo;
 		} else {
 			Celulas<T> noAnterior = recuperarNo(posicao - 1);
@@ -42,6 +45,8 @@ public class ListaDuplaLigada<T> {
 			Celulas<T> novoNo = new Celulas<>(elemento);
 			noAnterior.setProximo(novoNo);
 			novoNo.setProximo(noAtual);
+			noAtual.setAnterior(novoNo);
+			novoNo.setAnterior(noAnterior);
 		}
 		this.tamanho++;
 	}
