@@ -2,6 +2,7 @@ package com.codebychristian.estruturadados.main;
 
 import java.util.Scanner;
 
+import com.codebychristian.estruturadados.listaligadas.ListaDuplaLigada;
 import com.codebychristian.estruturadados.listaligadas.ListaLigada;
 import com.codebychristian.estruturadados.modelos.Pessoa;
 import com.codebychristian.estruturadados.vetores.Vetor;
@@ -14,6 +15,7 @@ public class Main {
 		System.out.println("1. Gerenciar memória");
 		System.out.println("2. Vetores");
 		System.out.println("3. Lista Ligada");
+		System.out.println("4. Lista Duplamente Ligada");
 		Scanner scanner = new Scanner(System.in);
 		int opcao = scanner.nextInt();
 
@@ -27,9 +29,35 @@ public class Main {
 		case 3:
 			fazerListaLigada();
 			break;
+		case 4:
+			fazerListaDuplaLigada();
+			break;
 		}
 
 		scanner.close();
+	}
+
+	private static void fazerListaDuplaLigada() {
+		ListaDuplaLigada<Pessoa> listaDuplaPessoa = new ListaDuplaLigada<Pessoa>();
+		listaDuplaPessoa.insere(new Pessoa(1, "Arajá"));
+		listaDuplaPessoa.insere(new Pessoa(2, "Bola"));
+		listaDuplaPessoa.insere(new Pessoa(3, "Corina"));
+		listaDuplaPessoa.inserirPrimeiro(new Pessoa(4, "Abocá"));
+		listaDuplaPessoa.inserirUltimo(new Pessoa(5, "Centavo"));
+		listaDuplaPessoa.inserirEm(2, new Pessoa(6, "Nav"));
+		System.out.println(listaDuplaPessoa.toString());
+		listaDuplaPessoa.remover(3);
+		listaDuplaPessoa.remover(2);
+		System.out.println(listaDuplaPessoa.toString());
+		Pessoa p = listaDuplaPessoa.recuperar(0);
+		Pessoa pessoaNenhuma = new Pessoa(20, "Não importa");
+		System.out.println(listaDuplaPessoa.contem(p));
+		System.out.println(listaDuplaPessoa.contem(pessoaNenhuma));
+		System.out.println(listaDuplaPessoa.indeci(p));
+		System.out.println(listaDuplaPessoa.indeci(pessoaNenhuma));
+		for(int i = 0; i < listaDuplaPessoa.tamanho(); i++) {
+			System.out.println(listaDuplaPessoa.recuperar(i).toString());
+		}
 	}
 
 	private static void fazerListaLigada() {
