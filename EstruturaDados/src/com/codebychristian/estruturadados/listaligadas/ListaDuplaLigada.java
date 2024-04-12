@@ -101,16 +101,21 @@ public class ListaDuplaLigada<T> {
 		}
 		if (posicao == 0) {
 			Celulas<T> proximoNo = this.primeiroNo.getProximo();
+			this.primeiroNo.setProximo(null);
+			proximoNo.setAnterior(null);
 			this.primeiroNo = proximoNo;
 		} else if (posicao == tamanho() - 1) {
-			Celulas<T> penultimoNo = recuperarNo(tamanho() - 2);
+			Celulas<T> penultimoNo = this.ultimoNo.getAnterior();
 			penultimoNo.setProximo(null);
+			this.ultimoNo.setAnterior(null);
 			this.ultimoNo = penultimoNo;
 		} else {
-			Celulas<T> anteriorNo = recuperarNo(posicao - 1);
-			Celulas<T> proximoNo = recuperarNo(posicao + 1);
 			Celulas<T> noAtual = recuperarNo(posicao);
+			Celulas<T> anteriorNo = noAtual.getAnterior();
+			Celulas<T> proximoNo = noAtual.getProximo();			
 			anteriorNo.setProximo(proximoNo);
+			proximoNo.setAnterior(anteriorNo);
+			noAtual.setAnterior(null);
 			noAtual.setProximo(null);
 		}
 		this.tamanho--;
