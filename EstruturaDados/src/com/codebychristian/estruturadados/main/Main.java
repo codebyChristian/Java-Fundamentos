@@ -2,6 +2,7 @@ package com.codebychristian.estruturadados.main;
 
 import java.util.Scanner;
 
+import com.codebychristian.estruturadados.fila.Fila;
 import com.codebychristian.estruturadados.listaligadas.ListaDuplaLigada;
 import com.codebychristian.estruturadados.listaligadas.ListaLigada;
 import com.codebychristian.estruturadados.modelos.Pessoa;
@@ -18,6 +19,7 @@ public class Main {
 		System.out.println("3. Lista Ligada");
 		System.out.println("4. Lista Duplamente Ligada");
 		System.out.println("5. Pilha");
+		System.out.println("6. Fila");
 		Scanner scanner = new Scanner(System.in);
 		int opcao = scanner.nextInt();
 
@@ -37,9 +39,26 @@ public class Main {
 		case 5:
 			fazerPilha();
 			break;
+		case 6:
+			fazerFila();
+			break;
 		}
 
 		scanner.close();
+	}
+
+	private static void fazerFila() {
+		Fila<Pessoa> filaPessoas = new Fila<Pessoa>();
+		System.out.println(filaPessoas.estaVazio());
+		filaPessoas.enfileirar(new Pessoa(1, "Pitu"));
+		filaPessoas.enfileirar(new Pessoa(2, "Vodka"));
+		filaPessoas.enfileirar(new Pessoa(3, "Black White"));
+		System.out.println(filaPessoas.toString());
+		Pessoa fila1 = filaPessoas.desenfileirar();
+		Pessoa fila2 = filaPessoas.desenfileirar();
+		System.out.println(fila1.toString());
+		System.out.println(fila2.toString());
+		System.out.println(filaPessoas.toString());
 	}
 
 	private static void fazerPilha() {
