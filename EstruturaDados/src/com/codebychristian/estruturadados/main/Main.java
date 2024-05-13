@@ -5,6 +5,7 @@ import java.util.Scanner;
 import com.codebychristian.estruturadados.listaligadas.ListaDuplaLigada;
 import com.codebychristian.estruturadados.listaligadas.ListaLigada;
 import com.codebychristian.estruturadados.modelos.Pessoa;
+import com.codebychristian.estruturadados.pilha.Pilha;
 import com.codebychristian.estruturadados.vetores.Vetor;
 
 public class Main {
@@ -16,6 +17,7 @@ public class Main {
 		System.out.println("2. Vetores");
 		System.out.println("3. Lista Ligada");
 		System.out.println("4. Lista Duplamente Ligada");
+		System.out.println("5. Pilha");
 		Scanner scanner = new Scanner(System.in);
 		int opcao = scanner.nextInt();
 
@@ -32,9 +34,24 @@ public class Main {
 		case 4:
 			fazerListaDuplaLigada();
 			break;
+		case 5:
+			fazerPilha();
+			break;
 		}
 
 		scanner.close();
+	}
+
+	private static void fazerPilha() {
+		Pilha<Pessoa> pilhaPessoas = new Pilha<Pessoa>();
+		System.out.println(pilhaPessoas.estaVazio());
+		pilhaPessoas.empilhar(new Pessoa(1, "CR7"));
+		pilhaPessoas.empilhar(new Pessoa(2, "Chris"));
+		pilhaPessoas.empilhar(new Pessoa(3, "Ernań"));
+		Pessoa p1 = pilhaPessoas.desempilhar();
+		Pessoa p2 = pilhaPessoas.desempilhar();
+		System.out.println(p1.toString());
+		System.out.println(p2.toString());
 	}
 
 	private static void fazerListaDuplaLigada() {
