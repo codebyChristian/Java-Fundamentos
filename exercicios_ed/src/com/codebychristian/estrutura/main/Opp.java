@@ -1,5 +1,11 @@
 package com.codebychristian.estrutura.main;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
+import java.util.Scanner;
+
 public class Opp {
 	// iniciar variaveis
 	public int anoModelo;
@@ -9,6 +15,9 @@ public class Opp {
 	public Opp(int year, String name) {
 		anoModelo = year;
 		nomeModelo = name;
+	}
+	public Opp() {
+		
 	}
 	
 	
@@ -44,7 +53,42 @@ public class Opp {
 		carroVelocidade.ponteiroKm(200);
 		carroVelocidade.velocidadeMaxima();
 		System.out.println(carroVelocidade.nomeModelo + " " + carroVelocidade.anoModelo);
-
+		
+		// Scanner
+		Scanner input = new Scanner(System.in);
+		System.out.println("Entre com Nome, Idade e Salário: ");
+		String nameInput = input.nextLine();
+		// scanner com int
+		int idadeInput = input.nextInt();
+		// float scanner
+		float salarioInput = input.nextFloat();
+		System.out.println("Você é " + nameInput);
+		System.out.println("Idade de " + idadeInput);
+		System.out.println("Salário de " + salarioInput);
+		
+		// Localdate para date
+		LocalDate dataAgora = LocalDate.now();
+		System.out.println(dataAgora);
+		
+		// LocalTime para hora e minutos
+		LocalTime horaAgora = LocalTime.now();
+		System.out.println(horaAgora);
+		
+		// LocalDateTime para data e hora
+		LocalDateTime  dataHoraAgora = LocalDateTime.now();
+		System.out.println("Antes de formatar");
+		System.out.println(dataHoraAgora);
+		
+		// formatar date e hora
+		DateTimeFormatter formatarDataHora = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
+		String novoFormato = dataHoraAgora.format(formatarDataHora);
+		System.out.println("Depois de formatar");
+		System.out.println(novoFormato);
+		
+		
+		
+		// fechar variavel
+		input.close();
 	}
 
 }
