@@ -62,6 +62,14 @@ public class FilesJava {
 			System.out.println("Arquivo não existe.");
 		}
 		
+		// deletar (.txt) || serve para pasta (ela precisa esta vazia)
+		File myArquivoPronto = new File("/home/codybychristian/Documents/raiz/test.txt");
+		if (myArquivoPronto.delete()) {
+			System.out.println("Arquivo excluído: " + myArquivoPronto.getName());
+		} else {
+			System.out.println("Erro ao excluir.");
+		}
+		
 	}
 
 }
