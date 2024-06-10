@@ -21,17 +21,23 @@ public class Principal {
 		
 		//
 		
-		  int idade = 10; String nome = "Christian"; idade = idade +2; double peso =
-		  72.5;
+		  int idade = 10;
+		  String nome = "Christian"; 
+		  idade = idade +2;
+		  double peso = 72.5;
 		  
 		  Scanner teclado = new Scanner(System.in);
-		  System.out.println("Digite idade, peso e nome: "); idade = teclado.nextInt();
-		  peso = teclado.nextDouble(); nome = teclado.next(); teclado.close();
+		  System.out.println("Digite idade, peso e nome: "); 
+		  idade = teclado.nextInt();
+		  peso = teclado.nextDouble(); 
+		  nome = teclado.next(); 
+		  teclado.close();
 		  
 		  
 		  System.out.println();
 		  
-		  System.out.println("Nome:" + nome); System.out.printf("Idade: %d,\n", idade);
+		  System.out.println("Nome:" + nome); 
+		  System.out.printf("Idade: %d,\n", idade);
 		  System.out.printf("Peso: %.2f\n",peso);
 		  
 		  
