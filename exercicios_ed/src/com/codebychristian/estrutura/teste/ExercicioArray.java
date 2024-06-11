@@ -1,6 +1,6 @@
 package com.codebychristian.estrutura.teste;
 
-
+import java.util.Arrays;
 
 public class ExercicioArray {
 
@@ -19,10 +19,22 @@ public class ExercicioArray {
 		// converter string para array
 		String name = "Hello";
 		
+		// maneira facil de converter caractere por caractere
 		char[] myArray = name.toCharArray();
 		
+		// mostrar todos as letras separadas
 		for(char j : myArray) {
 			System.out.println(j);
+		}
+		
+		
+		// Sort of Array
+		String[] nomes = { "Pezão", "Galo Cego", "Zezão"};
+		// função esta na biblioteca Arrays
+		Arrays.sort(nomes);
+		// for para mostrar a modificação
+		for (String n : nomes) {
+			System.out.println(n);
 		}
 		
 	}
