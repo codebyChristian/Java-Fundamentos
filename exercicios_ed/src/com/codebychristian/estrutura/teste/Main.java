@@ -18,7 +18,20 @@ public class Main {
 		soma = number1 + number2;
 		System.out.println("A soma é: " + soma);
 		
+		
+		// reverse string
+		String original = "";
+		String reverseOriginal = "";
+		
+		System.out.println("Digite qualquer texto, para convertemos: ");
+		original = teclado.next();
+		
+		for (int i = 0; i < original.length(); i++) {
+			reverseOriginal = original.charAt(i) + reverseOriginal;
+		}
+		System.out.println("Reverse: " + reverseOriginal);
 
+		
 		teclado.close();
 	}
 
