@@ -16,6 +16,15 @@ public class ExercicioArray {
 		}
 		System.out.println("A soma do Array é: " + soma);
 
+		// converter string para array
+		String name = "Hello";
+		
+		char[] myArray = name.toCharArray();
+		
+		for(char j : myArray) {
+			System.out.println(j);
+		}
+		
 	}
 
 }
