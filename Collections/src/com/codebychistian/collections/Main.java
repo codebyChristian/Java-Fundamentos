@@ -15,11 +15,12 @@ public class Main {
 		pessoas.add(new Pessoa(2, "Japinha"));
 		pessoas.add(new Pessoa(3, "Doquinha"));
 		System.out.println("Loop com For:");
+		// for é ideal para ArrayList
 		for (int i = 0; i < pessoas.size(); i++) {
 			Pessoa p = pessoas.get(i);
 			System.out.println(p);
 		}
-		// Iterator
+		// Iterator: se usar LinkedList o iterator é a melhor maneira
 		System.out.println("Usando iterator:");
 		Iterator<Pessoa> iteratorPessoa = pessoas.iterator();
 		while (iteratorPessoa.hasNext()) {
