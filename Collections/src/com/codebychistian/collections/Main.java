@@ -22,17 +22,19 @@ public class Main {
 //		}
 		// Iterator: se usar LinkedList o iterator é a melhor maneira, 
 		System.out.println("Usando iterator:");
-		Iterator<Pessoa> iteratorPessoa = pessoas.iterator();
-		while (iteratorPessoa.hasNext()) {
-			Pessoa p = iteratorPessoa.next();
-			if (p.getId() == 1) {
-				// somente é possivel remover usando o proprio iterator
-				iteratorPessoa.remove();
-				// não é recomendado
-//				pessoas.remove(p);
-			}
-			System.out.println(p);
-		}
+//		Iterator<Pessoa> iteratorPessoa = pessoas.iterator();
+//		while (iteratorPessoa.hasNext()) {
+//			Pessoa p = iteratorPessoa.next();
+//			if (p.getId() == 1) {
+//				// somente é possivel remover usando o proprio iterator
+//				iteratorPessoa.remove();
+//				// não é recomendado 
+////				pessoas.remove(p);
+//			}
+//			System.out.println(p);
+//		}
+		// removeIf  -- usando expressões Lambda
+		pessoas.removeIf(p -> p.getId() == 1);
 		System.out.println(pessoas);
 		// for-each  -- ele utiliza Iterator
 //		System.out.println("Usando For-Each");
