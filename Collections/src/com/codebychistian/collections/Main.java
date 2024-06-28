@@ -17,6 +17,8 @@ public class Main {
 		System.out.println("Loop com For:");
 		pessoas.remove(new Pessoa(1, "Chris"));
 		System.out.println(pessoas);
+		// contens
+		System.out.println(pessoas.contains(new Pessoa(2, "Japinha")));
 		// for é ideal para ArrayList
 //		for (int i = 0; i < pessoas.size(); i++) {
 //			Pessoa p = pessoas.get(i);
