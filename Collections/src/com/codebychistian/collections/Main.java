@@ -27,6 +27,12 @@ public class Main {
 			Pessoa p = iteratorPessoa.next();
 			System.out.println(p);
 		}
+		// for-each  -- ele utiliza Iterator
+		System.out.println("Usando For-Each");
+		for (Pessoa p : pessoas) {
+			System.out.println(p);
+		}
+		
 
 }
 }
