@@ -1,5 +1,7 @@
 package com.codebychristian.models;
 
+import java.util.Objects;
+
 public class Pessoa {
 
 	private int id;
@@ -33,5 +35,24 @@ public class Pessoa {
 	public String toString() {
 		return "Pessoa [id = " + id + ", name = " + name + "]";
 	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(id, name);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Pessoa other = (Pessoa) obj;
+		return id == other.id && Objects.equals(name, other.name);
+	}
+	
+	
 
 }

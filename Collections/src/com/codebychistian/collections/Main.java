@@ -15,13 +15,15 @@ public class Main {
 		pessoas.add(new Pessoa(2, "Japinha"));
 		pessoas.add(new Pessoa(3, "Doquinha"));
 		System.out.println("Loop com For:");
+		pessoas.remove(new Pessoa(1, "Chris"));
+		System.out.println(pessoas);
 		// for é ideal para ArrayList
 //		for (int i = 0; i < pessoas.size(); i++) {
 //			Pessoa p = pessoas.get(i);
 //			System.out.println(p);
 //		}
 		// Iterator: se usar LinkedList o iterator é a melhor maneira, 
-		System.out.println("Usando iterator:");
+//		System.out.println("Usando iterator:");
 //		Iterator<Pessoa> iteratorPessoa = pessoas.iterator();
 //		while (iteratorPessoa.hasNext()) {
 //			Pessoa p = iteratorPessoa.next();
@@ -34,8 +36,8 @@ public class Main {
 //			System.out.println(p);
 //		}
 		// removeIf  -- usando expressões Lambda
-		pessoas.removeIf(p -> p.getId() == 1);
-		System.out.println(pessoas);
+//		pessoas.removeIf(p -> p.getId() == 1);
+//		System.out.println(pessoas);
 		// for-each  -- ele utiliza Iterator
 //		System.out.println("Usando For-Each");
 //		for (Pessoa p : pessoas) {
