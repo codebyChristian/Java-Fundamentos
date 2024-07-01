@@ -38,14 +38,37 @@ public class Main {
 //		});
 		
 		// usando sort passando método da Collenctions  -- recomendado --
-		pessoas.sort((o1, o2) -> {
-			if (o1.getName().length() == o2.getName().length()) {
-				return 0;
-			} else if (o1.getName().length() < o2.getName().length()) {
-				return -1;
-			} 
-			return 1;
-		});
+		
+//		pessoas.sort((o1, o2) -> {
+//			if (o1.getName().length() == o2.getName().length()) {
+//				return 0;
+//			} else if (o1.getName().length() < o2.getName().length()) {
+//				return -1;
+//			} 
+//			return 1;
+//		});
+		
+		// usando método da classe Comparator
+		
+		pessoas.sort(Comparator.comparingInt(Pessoa::getId));
+		
+		// comparndo strings
+		
+		pessoas.sort(Comparator.comparing(Pessoa::getName, (o1, o2) -> { 
+			if (o1.length() == o2.length()) {
+			return 0;
+		} else if (o1.length() < o2.length()) {
+			return -1;
+		} 
+		return 1;
+		}));
+		
+		
+		// comparando pela instancia da classe pessoa == ID
+		pessoas.sort(Comparator.naturalOrder());
+		
+		// comparando pela ordem inversa
+		pessoas.sort(Comparator.reverseOrder());
 		
 		// interface comparable: usando nome
 //		Collections.sort(pessoas, new PessoaTamanhoNomeComparator());
