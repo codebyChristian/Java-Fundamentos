@@ -3,6 +3,7 @@ package com.codebychistian.collections;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 import com.codebychristian.collections.comparadores.PessoaTamanhoNomeComparator;
@@ -25,8 +26,29 @@ public class Main {
 		// print sem sort
 		System.out.println(pessoas);
 		
+		// Comparator com expressão lambda
+//		Collections.sort(pessoas, (Comparator<Pessoa>)(o1 ,o2) -> {;
+//			if (o1.getName().length() == o2.getName().length()) {
+//				return 0;
+//			} else if (o1.getName().length() < o2.getName().length()) {
+//				return -1;
+//			} 
+//			return 1;
+//			
+//		});
+		
+		// usando sort passando método da Collenctions  -- recomendado --
+		pessoas.sort((o1, o2) -> {
+			if (o1.getName().length() == o2.getName().length()) {
+				return 0;
+			} else if (o1.getName().length() < o2.getName().length()) {
+				return -1;
+			} 
+			return 1;
+		});
+		
 		// interface comparable: usando nome
-		Collections.sort(pessoas, new PessoaTamanhoNomeComparator());
+//		Collections.sort(pessoas, new PessoaTamanhoNomeComparator());
 		
 		// sort 
 //		Collections.sort(pessoas);
