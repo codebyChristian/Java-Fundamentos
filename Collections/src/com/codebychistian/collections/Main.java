@@ -1,6 +1,8 @@
 package com.codebychistian.collections;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 import com.codebychristian.models.Pessoa;
@@ -10,14 +12,23 @@ public class Main {
 	public static void main(String[] args) {
 		// List , ArrayList , Collections podem ser instanciados
 		List<Pessoa> pessoas = new ArrayList<Pessoa>();
-		pessoas.add(new Pessoa(1, "Chris"));
-		pessoas.add(new Pessoa(2, "Japinha"));
+		pessoas.add(new Pessoa(2, "hgbb"));
+		pessoas.add(new Pessoa(1, "Japinha"));
 		pessoas.add(new Pessoa(3, "Doquinha"));
-		System.out.println("Loop com For:");
-		pessoas.remove(new Pessoa(1, "Chris"));
+		
+//		System.out.println("Loop com For:");
+//		pessoas.remove(new Pessoa(1, "Chris"));
+//		System.out.println(pessoas); 
+//		System.out.println(pessoas.contains(new Pessoa(2, "Japinha")));
+		// print sem sort
+		System.out.println(pessoas);
+		// sort
+		Collections.sort(pessoas);
+		// usando método sort
 		System.out.println(pessoas);
 		// contens
-		System.out.println(pessoas.contains(new Pessoa(2, "Japinha")));
+
+		
 		// for é ideal para ArrayList
 //		for (int i = 0; i < pessoas.size(); i++) {
 //			Pessoa p = pessoas.get(i);

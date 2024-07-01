@@ -2,7 +2,7 @@ package com.codebychristian.models;
 
 import java.util.Objects;
 
-public class Pessoa {
+public class Pessoa implements Comparable<Pessoa> {
 
 	private int id;
 	private String name;
@@ -51,6 +51,20 @@ public class Pessoa {
 			return false;
 		Pessoa other = (Pessoa) obj;
 		return id == other.id && Objects.equals(name, other.name);
+	}
+
+	@Override
+	public int compareTo(Pessoa o) {
+		// usando ID
+		// 0; objetos iguias.
+		if (this.getId() == o.getId()) {
+			return 0;
+		}
+		// < 0: instancia é "menor" do que o argumento
+		if (this.getId() < o.getId()) 
+			return -1;
+		// > 0: instancia é "maior" do que o argumento
+		return 1;
 	}
 	
 	
