@@ -5,6 +5,7 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
+import com.codebychristian.collections.comparadores.PessoaTamanhoNomeComparator;
 import com.codebychristian.models.Pessoa;
 
 public class Main {
@@ -12,21 +13,26 @@ public class Main {
 	public static void main(String[] args) {
 		// List , ArrayList , Collections podem ser instanciados
 		List<Pessoa> pessoas = new ArrayList<Pessoa>();
-		pessoas.add(new Pessoa(2, "hgbb"));
-		pessoas.add(new Pessoa(1, "Japinha"));
-		pessoas.add(new Pessoa(3, "Doquinha"));
+		pessoas.add(new Pessoa(2, "DoqDohgbbquinhauinha"));
+		pessoas.add(new Pessoa(1, "Japinha;;;"));
+		pessoas.add(new Pessoa(3, "Rambo"));
 		
 //		System.out.println("Loop com For:");
 //		pessoas.remove(new Pessoa(1, "Chris"));
 //		System.out.println(pessoas); 
 //		System.out.println(pessoas.contains(new Pessoa(2, "Japinha")));
+		
 		// print sem sort
 		System.out.println(pessoas);
-		// sort
-		Collections.sort(pessoas);
+		
+		// interface comparable: usando nome
+		Collections.sort(pessoas, new PessoaTamanhoNomeComparator());
+		
+		// sort 
+//		Collections.sort(pessoas);
 		// usando método sort
 		System.out.println(pessoas);
-		// contens
+		
 
 		
 		// for é ideal para ArrayList
