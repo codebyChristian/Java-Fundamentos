@@ -3,6 +3,7 @@ package com.codebychistian.collections;
 import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.Set;
+import java.util.TreeSet;
 
 import com.codebychristian.models.Pessoa;
 
@@ -31,7 +32,27 @@ public class MainSet {
 		for (Pessoa p : link ) {
 			System.out.println(p);
 		}
-		System.out.println(link);
+		System.out.println(link); 
+		
+		System.out.println("------------------------------");
+		// Treeset: mesmo sendo adicionado na ordem diferente, ele organiza e colocar na ordem
+		// Mais custoso, obrigado usar método Comparable
+		
+		// usar lambda, para implementar Comparator, substituindo o Comparable
+		// O lambda abaixo compara pela ordem alfabética
+		Set<Pessoa> tree = new TreeSet<Pessoa>( (p1, p2) -> {
+			return p1.getName().compareTo(p2.getName());
+		});
+		
+		//tree.add(null);  --- não aceita null
+		tree.add( new Pessoa (8, "Oitavo"));
+		tree.add(new Pessoa(7, "Sétimo"));
+		tree.add(new Pessoa(10, "Décimo"));
+		// iterator
+		for (Pessoa p : tree) {
+			System.out.println(p);
+		}
+		System.out.println(tree);
 
 	}
 
