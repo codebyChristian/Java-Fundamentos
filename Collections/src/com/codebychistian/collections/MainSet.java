@@ -2,6 +2,7 @@ package com.codebychistian.collections;
 
 import java.util.HashSet;
 import java.util.LinkedHashSet;
+import java.util.NavigableSet;
 import java.util.Set;
 import java.util.TreeSet;
 
@@ -53,6 +54,16 @@ public class MainSet {
 			System.out.println(p);
 		}
 		System.out.println(tree);
+		System.out.println("----------------------");
+		// O maior custo computacional
+		System.out.println("NavigatorSet");
+		NavigableSet<Pessoa> navigator = new TreeSet<Pessoa>();
+		navigator.add(new Pessoa(11, "onze"));
+		navigator.add(new Pessoa(12, "doze"));
+		navigator.add(new Pessoa(13, "treze"));
+		// método da Interface NavigableSet: lower
+		Pessoa teste = navigator.lower(new Pessoa(12, "doze"));
+		System.out.println(teste);
 
 	}
 
