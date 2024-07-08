@@ -16,10 +16,12 @@ public class MainQueue {
 		queue.add(new Pessoa(3, "Três"));
 		queue.add(new Pessoa(1, "Um"));
 		queue.add(new Pessoa(2, "Dois"));
+		queue.offer(new Pessoa(4, "Quatro"));
 		System.out.println(queue);
 		
 		while (!queue.isEmpty()) {
 			Pessoa p = queue.poll();
+			// o método - peek() - não retira da lista, e formar o laço infinito
 			System.out.println(p);
 		}
 
