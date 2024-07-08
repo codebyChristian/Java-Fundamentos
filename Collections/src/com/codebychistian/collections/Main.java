@@ -1,12 +1,9 @@
 package com.codebychistian.collections;
 
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-import com.codebychristian.collections.comparadores.PessoaTamanhoNomeComparator;
 import com.codebychristian.models.Pessoa;
 
 public class Main {
