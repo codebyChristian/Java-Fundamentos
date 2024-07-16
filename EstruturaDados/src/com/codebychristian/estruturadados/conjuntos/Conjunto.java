@@ -13,7 +13,7 @@ public class Conjunto<T> {
 
 	public boolean insere(T elemento) {
 		// Implementar elementos não repetidos
-		if (elemento != null && !this.elementos.contem(elemento)) {
+		if (elemento != null && !contemOtimizado(elemento)) {
 			this.elementos.insere(elemento);
 			return true;
 		}
@@ -21,7 +21,7 @@ public class Conjunto<T> {
 	}
 
 	public boolean insereEm(int posicao, T elemento) {
-		if (elemento != null && !this.elementos.contem(elemento)) {
+		if (elemento != null && !contemOtimizado(elemento)) {   // contemOtimizado(elemento) - alternativa para this.elemento
 			this.elementos.inserirEm(posicao, elemento);
 			return true;
 		}
@@ -56,10 +56,20 @@ public class Conjunto<T> {
 		this.elementos.remover(elemento);
 	}
 
+	@SuppressWarnings("unused")
+	private boolean contemOtimizado(T elemento) {
+		for (int i = 0; i < this.elementos.tamanho(); i++) {
+			T el = this.elementos.recuperar(i);
+			if (el.hashCode() == elemento.hashCode()) {
+				return true;
+			}
+		}
+		return false;
+	}
+
 	@Override
 	public String toString() {
 		return "Conjunto [elementos = " + elementos + "]";
 	}
-	
 
 }

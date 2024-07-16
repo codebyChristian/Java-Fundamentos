@@ -157,4 +157,10 @@ public class ListaLigada<T> {
 
 	}
 
+
+
+	
+	
+	
+
 }
