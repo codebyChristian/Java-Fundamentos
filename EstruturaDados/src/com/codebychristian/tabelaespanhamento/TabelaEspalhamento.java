@@ -25,7 +25,7 @@ public class TabelaEspalhamento<T> { // tipo: T = generico
 
 	public boolean insere(T elemento) {
 		// se dentro da categoria o elemento for repetido ele não será salvo
-		if (this.contem(elemento)) {
+		if (elemento == null || this.contem(elemento)) {
 			return false;
 		}
 		// insere o elemento sabendo que não há elementos repetidos
@@ -54,7 +54,7 @@ public class TabelaEspalhamento<T> { // tipo: T = generico
 	}
 
 	private int gerarNumeroEspanhalmento(T elemento) {
-		return elemento.hashCode() % 16;
+		return Math.abs(elemento.hashCode() % 16);
 	}
 
 	@Override

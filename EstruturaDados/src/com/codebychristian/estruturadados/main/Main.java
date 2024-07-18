@@ -14,7 +14,7 @@ public class Main {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		System.out.println("--QUAL OPÇÃO--");
+		System.out.println("--ESCOLHA UMA ESTRUTURA DE DADOS--");
 		System.out.println("1. Gerenciar memória");
 		System.out.println("2. Vetores");
 		System.out.println("3. Lista Ligada");
@@ -60,7 +60,7 @@ public class Main {
 		System.out.println(conjuntoPessoas);
 		System.out.println(conjuntoPessoas.insere(new Pessoa(1, "Name1")));
 		System.out.println(conjuntoPessoas);
-		System.out.println(conjuntoPessoas.insereEm(1, new Pessoa(1, "Name1")));
+		System.out.println(conjuntoPessoas.insere(new Pessoa(1, "Name1")));
 		System.out.println(conjuntoPessoas);
 	}
 
