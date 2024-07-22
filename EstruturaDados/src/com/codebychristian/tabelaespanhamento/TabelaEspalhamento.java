@@ -10,7 +10,7 @@ public class TabelaEspalhamento<T> { // tipo: T = generico
 	// por isso ela não terá ordem
 
 	// Implementando explicação acima
-	private ListaLigada<ListaLigada<T>> elementos;
+	private ListaLigada<ListaLigada<T>> elementos;                         
 	private int numeroCatagorias = 16;
 	private int tamanho;
 
