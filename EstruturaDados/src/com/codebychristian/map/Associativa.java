@@ -1,10 +1,10 @@
 package com.codebychristian.map;
 
-public class Associativa<K,V> {  // Essa classe ela é associativa que recebe 2 valores genericos
-	
+public class Associativa<K, V> { // Essa classe ela é associativa que recebe 2 valores genericos
+
 	private K chave;
 	private V valor;
-	
+
 	public Associativa(K chave, V valor) {
 		this.chave = chave;
 		this.valor = valor;
@@ -17,7 +17,5 @@ public class Associativa<K,V> {  // Essa classe ela é associativa que recebe 2 
 	public V getValor() {
 		return valor;
 	}
-	
-	
 
 }
