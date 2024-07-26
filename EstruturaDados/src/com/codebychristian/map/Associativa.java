@@ -18,4 +18,11 @@ public class Associativa<K, V> { // Essa classe ela é associativa que recebe 2 
 		return valor;
 	}
 
+	@Override
+	public String toString() {
+		return "Associativa [ chave = " + chave + ", valor = " + valor + "]";
+	}
+	
+	
+
 }

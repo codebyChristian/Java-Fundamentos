@@ -8,7 +8,8 @@ public class Maps<K, V> {
 	private int quantidadeCategoria = 16;
 	
 	// inicializar construtor
-	Maps() {
+	// aula 1012
+	public Maps() {
 		this.elemento = new ListaLigada<ListaLigada<Associativa<K,V>>>();
 		for (int i = 0; i < quantidadeCategoria; i++) {
 			this.elemento.insere(new ListaLigada<Associativa<K,V>>());

@@ -9,6 +9,7 @@ import com.codebychristian.estruturadados.listaligadas.ListaLigada;
 import com.codebychristian.estruturadados.modelos.Pessoa;
 import com.codebychristian.estruturadados.pilha.Pilha;
 import com.codebychristian.estruturadados.vetores.Vetor;
+import com.codebychristian.map.Maps;
 
 public class Main {
 
@@ -22,6 +23,7 @@ public class Main {
 		System.out.println("5. Pilha");
 		System.out.println("6. Fila");
 		System.out.println("7. Conjunto");
+		System.out.println("8. Mapa");
 		Scanner scanner = new Scanner(System.in);
 		int opcao = scanner.nextInt();
 
@@ -47,9 +49,31 @@ public class Main {
 		case 7:
 			fazerConjunto();
 			break;
+		case 8:
+			fazerMap();
+			break;
 		}
 
 		scanner.close();
+	}
+
+	private static void fazerMap() {
+		// aa
+		Maps<String, Pessoa> mapaPessoa = new Maps<String, Pessoa>();
+		System.out.println(mapaPessoa.toString());
+		mapaPessoa.adicionar("legal", new Pessoa(1, "UM"));
+		System.out.println(mapaPessoa.toString());
+		System.out.println(mapaPessoa.contemChave("legal"));
+		System.out.println(mapaPessoa.contemChave("chata"));
+		mapaPessoa.adicionar("chata", new Pessoa(2, "DOIS"));
+		System.out.println(mapaPessoa.contemChave("chata"));
+		mapaPessoa.remover("legal");
+		System.out.println(mapaPessoa.toString());
+		mapaPessoa.adicionar("ss", new Pessoa(3, "TRES"));
+		System.out.println(mapaPessoa.toString());
+		System.out.println(mapaPessoa.recuperar("ss"));
+		mapaPessoa.remover("aa");
+		
 	}
 
 	private static void fazerConjunto() {
