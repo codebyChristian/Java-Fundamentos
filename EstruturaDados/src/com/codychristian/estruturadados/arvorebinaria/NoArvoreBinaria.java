@@ -1,8 +1,8 @@
 package com.codychristian.estruturadados.arvorebinaria;
 
-public class NoArvoreBinaria<T> {
+public abstract class NoArvoreBinaria<T> {
 
-	private T valor;
+	protected T valor;
 	private NoArvoreBinaria<T> noEsquerdo;
 	private NoArvoreBinaria<T> noDireito;
 	
@@ -32,8 +32,6 @@ public class NoArvoreBinaria<T> {
 		return valor;
 	}
 	
-	public int peso() {
-		return this.valor.hashCode();
-	}
+	public abstract int peso();
 
 }
