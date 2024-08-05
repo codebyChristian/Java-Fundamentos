@@ -34,4 +34,13 @@ public abstract class NoArvoreBinaria<T> {
 	
 	public abstract int peso();
 
+	@Override
+	public String toString() {
+		String esquerda = (this.noEsquerdo == null ? "[(X)]" : "[(" + this.noEsquerdo.toString() + ")]");
+		String direita = (this.noDireito == null ? "[(X)]" : "[(" + this.noDireito.toString() + ")]");
+		return esquerda + "[" + (this.valor.toString() + "]" + direita);
+	}
+
+	
+	
 }

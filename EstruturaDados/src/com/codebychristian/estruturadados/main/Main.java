@@ -10,6 +10,9 @@ import com.codebychristian.estruturadados.modelos.Pessoa;
 import com.codebychristian.estruturadados.pilha.Pilha;
 import com.codebychristian.estruturadados.vetores.Vetor;
 import com.codebychristian.map.Maps;
+import com.codychristian.estruturadados.arvorebinaria.Arvore;
+import com.codychristian.estruturadados.arvorebinaria.NoArvoreBinaria;
+import com.codychristian.estruturadados.arvorebinaria.NoArvorePessoa;
 
 public class Main {
 
@@ -24,6 +27,7 @@ public class Main {
 		System.out.println("6. Fila");
 		System.out.println("7. Conjunto");
 		System.out.println("8. Mapa");
+		System.out.println("9. Árvore Binária");
 		Scanner scanner = new Scanner(System.in);
 		int opcao = scanner.nextInt();
 
@@ -52,9 +56,24 @@ public class Main {
 		case 8:
 			fazerMap();
 			break;
+		case 9:
+			fazerArvoreBinaria();
+			break;
 		}
 
 		scanner.close();
+	}
+
+	private static void fazerArvoreBinaria() {
+		// Arvore binaria
+		Arvore<Pessoa> arvorePessoa = new Arvore<Pessoa>();
+		System.out.println(arvorePessoa.toString());
+		arvorePessoa.inserir(new NoArvorePessoa(new Pessoa(11, "11")));
+		System.out.println(arvorePessoa.toString());
+		arvorePessoa.inserir(new NoArvorePessoa(new Pessoa(10, "10")));
+		System.out.println(arvorePessoa.toString());
+		arvorePessoa.inserir(new NoArvorePessoa(new Pessoa(12, "12")));
+		System.out.println(arvorePessoa.toString());
 	}
 
 	private static void fazerMap() {
